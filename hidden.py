@@ -108,8 +108,6 @@ class HiddenCommands(Extension):
     async def collect_last_50_function(self, ctx: PrefixedContext):
         channel = ctx.channel
         messages = await channel.fetch_messages(50)
-        
-        # Assuming you want to save the messages in reverse order (newest first)
         messages.reverse()
 
         # Generate HTML content
