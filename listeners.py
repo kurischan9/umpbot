@@ -124,7 +124,7 @@ class Listeners(Extension):
         # Vetting
         # Checking If It Occured In Vetting Tickets
         if new_channel.parent_id == 1130507431013789746:
-            await asyncio.sleep(0.5)
+            await asyncio.sleep(1)
             channel_name_parts = event.channel.name.split('-')
 
             if channel_name_parts[0] == "learning":
