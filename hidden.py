@@ -100,9 +100,51 @@ class HiddenCommands(Extension):
             )
         await ctx.send(embeds=[rule_1984])
 
-    @prefixed_command(name="send_discussion_ethics")
+    #need to add thread buttons to this later. I (sam) don't understand how they work yet
+    @prefixed_command(name="send_discussion_ethics") 
     async def send_discussion_ethics_function(self, ctx: PrefixedContext):
-        await ctx.reply("Hello world!")
+        strikes = Embed(
+            title="Discussion Strikes",
+            description="There will be a 3 strike system going up and down, so 7 strikes total. You start at 0, and for Bad Faith activities, you gain strikes going down, -1/-2/-3 and you get the role, but you can also lose strikes through good faith interactions. If you hit Bad Faith, you need a total of 7 Good Faith (to +3) to get the role removed. We are primarily looking for patterns of behaviors in server members in order to identify people who are positive and negative influences on the general environment of the server.",
+            color="#36393F"
+        )
+        await ctx.send(embeds=[strikes])
+
+        bad_faith = Embed(
+            title="Bad Faith",
+            description="A Bad Faith interaction is a notable breach of discussion ethics which serve to drag down the quality of server discourse and create an environment of poor ability to discuss. Breaches of the https://discord.com/channels/898568341499838514/1058784238750662746 can often be considered bad faith in and of themselves, but we also recognize other forms improper rhetoric and methods of engaging in discussion as Bad Faith even if not against the rules per se:",
+            color="#36393F"
+        )
+        await ctx.send(embeds=[bad_faith])
+
+        good_faith = Embed(
+            title="Good Faith",
+            description="A Good Faith interaction is following proper debate rules, and going above and beyond in doing so. Acting as one would expect a member of the United Marxist Pact to act is not something that rewards Good Faith. Good Faith discourse uplifts the quality of their own discussion and helps increase server quality as a whole.",
+            color="#36393F"
+        )
+        await ctx.send(embeds=[good_faith])
+
+        discourse = Embed(
+            title="Quality Discourse and Proper Discussion",
+            description="Please see the attached thread for advisory notice on proper discussion technique and engagement:",
+            color="#36393F"
+        )
+        await ctx.send(embeds=[discourse])
+
+        #this one is missing the thread it is referencing. need to revise or remove
+        evidence = Embed(
+            title="How to Present Resources and Evidence",
+            description="Please see the attached thread for advisory notice on: \n1. How to identify good resources and navigate them (media literacy) \n2. How to present them for productive discussion",
+            color="#36393F"
+        )
+        await ctx.send(embeds=[evidence])
+
+        ai_usage = Embed(
+            title="Ethics of the Usage of AI and Allowances",
+            description="As ChatBot AI like ChatGPT AI increases in capacity and inability to be distinguished between human posts of high quality and AI generated posts, UMP will be developing our understanding of integration, strengths and weaknesses, and the ethics of utilizing AI technology in a server primarily around educating for class consciousness. Please see attached thread for our considerations around usage of AI:",
+            color="#36393F"
+        )
+        await ctx.send(embeds=[ai_usage])
 
     @prefixed_command(name="collect_last_50")
     async def collect_last_50_function(self, ctx: PrefixedContext):
